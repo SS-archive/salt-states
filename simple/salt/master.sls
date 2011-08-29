@@ -1,5 +1,6 @@
 # Turn on a salt master
-include salt
+include:
+  - salt
 
 salt-master:
   service:

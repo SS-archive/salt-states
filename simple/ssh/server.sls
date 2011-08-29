@@ -1,4 +1,5 @@
-include ssh
+include:
+  - ssh
 
 sshd:
   service:
