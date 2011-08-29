@@ -1,4 +1,4 @@
-# Ensure that the 
+# Ensure that the salt minion is running and on
 
 salt:
   pkg:
@@ -9,6 +9,7 @@ salt-minion:
     - running
     - require:
       - pkg: salt
+      - file: /etc/salt/minion
 
 /etc/salt/minion:
   file:
