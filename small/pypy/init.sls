@@ -1,0 +1,3 @@
+pypy:
+  pkg:
+    - installed
