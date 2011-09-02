@@ -6,3 +6,5 @@ vim:
   file:
     - managed
     - source: salt://edit/vimrc
+  require:
+    - pkg: vim
