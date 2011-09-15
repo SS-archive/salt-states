@@ -1,5 +1,7 @@
 users:
-  - names:
-    - moe
-    - curly
-    - larry
+  user:
+    - present
+    - names:
+      - moe
+      - curly
+      - larry
