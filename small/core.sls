@@ -5,3 +5,4 @@ include:
   - edit.emacs
   - users
   - tags
+  - hosts
