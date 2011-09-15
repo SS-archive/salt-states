@@ -10,6 +10,9 @@ salt-minion:
     - require:
       - pkg: salt
       - file: /etc/salt/minion
+  host:
+    - present
+    - ip: 10.10.10.1
 
 /etc/salt/minion:
   file:
