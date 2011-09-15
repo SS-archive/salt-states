@@ -1,7 +1,9 @@
-users:
+{% for usr in 'moe','larry','currly' %}
+{{ usr }}:
+  group:
+    - present
   user:
     - present
-    - names:
-      - moe
-      - curly
-      - larry
+    - require:
+      - group: {{ usr }}
+{% endfor %}
