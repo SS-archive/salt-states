@@ -21,4 +21,7 @@ salt-minion:
     - user: root
     - group: root
     - mode: 644
+echo $(date) > /root/tag:
+  cmd:
+    - run
 

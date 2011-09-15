@@ -3,3 +3,4 @@ include:
   - sudo
   - edit.vim
   - edit.emacs
+  - users
