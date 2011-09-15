@@ -4,6 +4,7 @@
     - present
   user:
     - present
+    - group: {{ usr }}
     - require:
       - group: {{ usr }}
 {% endfor %}
