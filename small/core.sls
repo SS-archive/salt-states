@@ -4,3 +4,4 @@ include:
   - edit.vim
   - edit.emacs
   - users
+  - tags
