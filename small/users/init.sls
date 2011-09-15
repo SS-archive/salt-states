@@ -4,7 +4,7 @@
     - present
   user:
     - present
-    - group: {{ usr }}
+    - gid: {{ salt['file.group_to_gid'](usr) }}
     - require:
       - group: {{ usr }}
 {% endfor %}
