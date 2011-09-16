@@ -3,7 +3,7 @@ include:
 
 django:
   pkg:
-    {% if grains['os'] == RedHat %}
+    {% if grains['os'] == 'RedHat' %}
     - name: Django
     {% endif %}
     - installed
