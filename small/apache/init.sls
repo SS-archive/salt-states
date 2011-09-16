@@ -1,6 +1,6 @@
 apache:
   pkg:
     {% if grains['os'] == 'RedHat' %}
-    - name: http
+    - name: httpd
     {% endif %}
     - installed
