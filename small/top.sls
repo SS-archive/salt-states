@@ -14,3 +14,9 @@ base:
   'mongo*':
     - mongo
     - core
+  'os:RedHat':
+    - match: grain
+    - apache
+    - python.django
+    - pypy
+    - core
