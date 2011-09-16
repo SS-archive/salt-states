@@ -1,5 +1,8 @@
 vim:
   pkg:
+    {% if grains['os'] == 'RedHat' %}
+    - name: vim-enhanced
+    {% endif %}
     - installed
 
 /etc/vimrc:
