@@ -4,3 +4,6 @@ apache:
     - name: httpd
     {% endif %}
     - installed
+  service:
+    - name: httpd
+    - running

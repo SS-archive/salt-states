@@ -9,5 +9,13 @@ vim:
   file:
     - managed
     - source: salt://edit/vimrc
-  require:
-    - pkg: vim
+    - user: root
+    {% if grains['os'] == 'FreeBSD'%}
+    - group: wheel
+    {% else %}
+    - group: root
+    {% endif %}
+    - mode: 644
+    - makedirs: True
+    - require:
+      - pkg: vim

@@ -4,6 +4,8 @@ base:
     - python.django
     - pypy
     - core
+    - recurse
+    - redis
   'syndic*':
     - salt.syndic
     - salt.master
@@ -20,3 +22,13 @@ base:
     - python.django
     - pypy
     - core
+  'os:FreeBSD':
+    - match: grain
+    - sudo
+    - edit.vim
+    - edit.emacs
+    - users
+    - tags
+    - hosts
+    - salt.dirs
+

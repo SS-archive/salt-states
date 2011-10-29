@@ -1,5 +1,13 @@
 include:
   - python
+  - apache
+
+extend:
+  apache:
+    service:
+      - watch:
+        - pkg: django
+
 
 django:
   pkg:
@@ -7,5 +15,5 @@ django:
     - name: Django
     {% endif %}
     - installed
-  require:
-    - pkg: python2
+    - require:
+      - pkg: python2

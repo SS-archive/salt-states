@@ -6,3 +6,6 @@ include:
   - users
   - tags
   - hosts
+  - salt.dirs
+  - xcbc
+  - swap
