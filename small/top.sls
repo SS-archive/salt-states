@@ -2,6 +2,7 @@ base:
   'webserv*':
     - apache
     - python.django
+    - python.mako
     - pypy
     - core
     - recurse
