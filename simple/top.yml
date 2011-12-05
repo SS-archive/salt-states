@@ -1,7 +1,0 @@
-# This top file is simple and intended to set up a bunch of machines in the
-# exact same way
-
-base:
-  '*':
-    - ssh
-    - salt
