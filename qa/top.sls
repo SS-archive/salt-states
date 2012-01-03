@@ -8,17 +8,6 @@ base:
     - http
     - saltsrc
     - users
-  'os:RedHat':
+  'os:CentOS':
     - match: grain
     - redhat
-  'os:Debian':
-    - match: grain
-    - debian
-  'os:Fedora':
-    - match: grain
-    - fedora
-  'os:FreeBSD':
-    - match: grain
-    - freebsd
-  'kernel:Linux':
-    - match: grain

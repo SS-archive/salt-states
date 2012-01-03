@@ -1,6 +1,6 @@
 include:
   - edit.vim
   - date
-  - cron
+  - crons
   - http
   - saltsrc
