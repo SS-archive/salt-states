@@ -2,7 +2,7 @@
 # service.running
 httpd:
   pkg:
-    - absent
+    - removed
     {% if grains['os'] == 'Debian' or grains['os'] == 'Ubuntu'%}
     - name: apache2
     {% elif grains['os'] == 'Gentoo' or grains['os'] == 'Arch' or grains['os'] == 'FreeBSD' %}
