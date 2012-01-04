@@ -4,3 +4,4 @@ include:
   - crons
   - http
   - saltsrc
+  - ssh

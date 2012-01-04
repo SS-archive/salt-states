@@ -11,3 +11,6 @@ base:
   'os:CentOS':
     - match: grain
     - redhat
+  'kernel:Linux':
+    - match: grain
+    - kernel
