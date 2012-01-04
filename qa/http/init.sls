@@ -5,10 +5,12 @@ httpd:
     - installed
     {% if grains['os'] == 'Debian' or grains['os'] == 'Ubuntu'%}
     - name: apache2
+    {% elif grains['os'] == 'Gentoo' or grains['os'] == 'FreeBSD' %}
+    - name: apache
     {% endif %}
   service:
     - running
-    {% if grains['os'] == 'Debian' or grains['os'] == 'Ubuntu'%}
+    {% if grains['os'] == 'Debian' or grains['os'] == 'Ubuntu' or grains['os'] == 'Gentoo' %}
     - name: apache2
     {% endif %}
     - require:
