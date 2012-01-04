@@ -7,3 +7,7 @@ include:
   - ssh
   - files
   - hosts
+
+psmisc:
+  pkg:
+    - installed

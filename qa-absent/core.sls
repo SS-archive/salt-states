@@ -4,6 +4,5 @@ include:
   - crons
   - http
   - saltsrc
-  - ssh
   - files
   - hosts
