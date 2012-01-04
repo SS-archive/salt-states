@@ -1,0 +1,3 @@
+emacs:
+  pkg:
+    - removed
