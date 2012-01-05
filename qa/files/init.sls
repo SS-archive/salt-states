@@ -27,4 +27,21 @@ sedfile:
     - after: spam
     - order: last
 
+/etc/hosts:
+  file:
+    - comment
+    - regex: '127.0.0.1.*'
+    - order: 50
+
+uncomment-hosts:
+  file:
+    - uncomment
+    - name: /etc/hosts
+    - regex: '.*127.0.0.1.*'
+    - order: 51
+
+/etc/resolv.conf:
+  file:
+    - append
+    - text: '# test append'
 

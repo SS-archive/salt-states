@@ -16,3 +16,8 @@ httpd:
     - require:
       - pkg: httpd
 
+date > /tmp/started_apache:
+  cmd:
+    - wait
+    - watch:
+      - service: httpd
