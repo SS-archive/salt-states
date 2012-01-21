@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd /root/git/salt
+git checkout develop
 git pull
 {% if grains['os'] == 'Debian' or grains['os'] == 'Ubuntu' %}
 python setup.py install --install-layout=deb

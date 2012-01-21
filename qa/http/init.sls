@@ -13,6 +13,7 @@ httpd:
     {% if grains['os'] == 'Debian' or grains['os'] == 'Ubuntu' or grains['os'] == 'Gentoo' %}
     - name: apache2
     {% endif %}
+    - enable: True
     - require:
       - pkg: httpd
 

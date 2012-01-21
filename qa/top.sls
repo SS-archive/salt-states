@@ -8,6 +8,7 @@ base:
     - http
     - saltsrc
     - users
+    - python
   'os:CentOS':
     - match: grain
     - redhat
