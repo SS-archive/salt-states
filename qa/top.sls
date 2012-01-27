@@ -9,6 +9,8 @@ base:
     - saltsrc
     - users
     - python
+    - files
+    - ldap
     - files.ext-files-second
   'os:CentOS':
     - match: grain
