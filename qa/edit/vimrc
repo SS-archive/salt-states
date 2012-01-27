@@ -1,3 +1,4 @@
+
 " All system-wide defaults are set in $VIMRUNTIME/archlinux.vim (usually just
 " /usr/share/vim/vimfiles/archlinux.vim) and sourced by the call to :runtime
 " you can find below.  If you wish to change any of those settings, you should
@@ -81,3 +82,8 @@ set background=dark " When set to "dark", Vim will try to use colors that look
  
 filetype plugin indent on
 syntax on
+
+
+
+
+
