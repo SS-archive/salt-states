@@ -1,0 +1,24 @@
+#!/usr/bin/env perl
+#
+# Munin plugin for monitoring PHP5-FPM memory usage
+#
+# Copyright TJ Stein 2010 http://constantshift.com
+
+my $PHP_BIN = exists $ENV{'phpbin'} ? $ENV{'phpbin'} : "php5-fpm";
+
+if ( exists $ARGV[0] and $ARGV[0] eq "config" ) {
+        print "graph_title PHP5-FPM Memory Usage\n";
+        print "graph_vlabel RAM\n";
+        print "graph_category PHP\n";
+        print "ram.label ram\n";
+                print "graph_args --base 1024\n";
+} else {
+        my $i = Integer;
+        @cmd = `ps auwx | grep $PHP_BIN | grep -v grep | grep -v phpfpm_memory`;
+
+        foreach (@cmd) {
+                @return = split(/ +/, $_);
+                $i += @return[5]*1024;
+        }
+        print "ram.value ".$i."\n";
+}
