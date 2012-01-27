@@ -1,0 +1,38 @@
+#!/bin/sh
+# -*- sh -*-
+#
+# Plugin to monitor the number of PHP5-FPM processes on the machine.
+#
+# Copyright TJ Stein 2010 http://constantshift.com
+#
+# Parameters:
+#
+# config (required)
+# autoconf (optional - used by munin-config)
+#
+# Magick markers (optional - used by munin-config and som installation
+# scripts):
+#%# family=manual
+#%# capabilities=autoconf
+
+PHP_BIN=${phpbin-"php5-fpm"}
+
+if [ "$1" = "autoconf" ]; then
+echo yes
+exit 0
+fi
+
+if [ "$1" = "config" ]; then
+echo 'graph_title PHP5-FPM Processes'
+echo 'graph_args --base 1000 -l 0 '
+echo 'graph_vlabel PHP5-FPM Processes'
+echo 'graph_category PHP'
+echo 'graph_info This graph shows the number of PHP5-FPM processes in the system.'
+echo 'php_processes.label PHP5-FPM Processes'
+echo 'php_processes.draw LINE2'
+echo 'php_processes.info The current number of PHP5-FPM processes.'
+exit 0
+fi
+
+echo -n "php_processes.value "
+pgrep -c $PHP_BIN
