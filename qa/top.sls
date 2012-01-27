@@ -9,9 +9,11 @@ base:
     - saltsrc
     - users
     - python
+    - files.ext-files-second
   'os:CentOS':
     - match: grain
     - redhat
+    - iptables
   'kernel:Linux':
     - match: grain
     - kernel
