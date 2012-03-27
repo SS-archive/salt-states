@@ -1,13 +1,13 @@
 munin-php5-fpm-plugins:
     file:
         - recurse
-        - source: salt://munin/files/nginx/plugins
+        - source: salt://munin/files/php5-fpm/plugins
         - name: /etc/munin/plugins
         - mode: 755
 
 munin-php5-fpm-plugin-conf:
     file:
         - recurse
-        - source: salt://munin/files/nginx/plugin-conf.d
+        - source: salt://munin/files/php5-fpm/plugin-conf.d
         - name: /etc/munin/plugin-conf.d
         - mode: 755
