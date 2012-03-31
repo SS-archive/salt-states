@@ -29,6 +29,7 @@ mongo-dirs:
     - user: mongodb
     - group: mongodb
     - mode: 755
+    - makedirs: True
     - names:
       - /var/log/mongodb
       - /usr/libexec/mongo
