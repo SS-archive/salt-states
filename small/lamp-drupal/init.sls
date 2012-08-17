@@ -1,32 +1,15 @@
 {% if grains['os'] == 'Ubuntu' %}
 
-php5:
-  pkg:
-    - installed
-
-php5-mysql:
-  pkg:
-    - installed
-
-php5-curl:
-  pkg:
-    - installed
-
-php5-cli:
-  pkg:
-    - installed
-
-php5-cgi:
-  pkg:
-    - installed
-
-php5-dev:
-  pkg:
-    - installed
-
-php-pear:
-  pkg:
-    - installed
+php5-pkgs:
+  pkg.installed:
+    - names:
+      - php5
+      - php5-mysql
+      - php5-curl
+      - php5-cli
+      - php5-cgi
+      - php5-dev
+      - php-pear
 
 apache2:
   pkg:
