@@ -23,15 +23,18 @@ mariadb-server-5.5:
   cmd.run:
     - name: sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
     - unless: apt-key list | grep -q 0xcbcb082a1bb943db
+    - require:
+      - file: mariadb-server-5.5
   file:
     - append
     - name: /etc/apt/sources.list
     - text: deb http://ftp.osuosl.org/pub/mariadb/repo/5.5/ubuntu precise main
     - skip_verify: True
-  cmd.run:
-    - name: sudo apt-get update
   pkg:
     - installed
+    - refresh: True
+    - require:
+      - cmd: mariadb-server-5.5
 
 git:
   pkg:
