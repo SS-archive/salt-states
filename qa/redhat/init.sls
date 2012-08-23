@@ -1,3 +1,0 @@
-emacs:
-  pkg:
-    - installed
