@@ -1,5 +1,5 @@
 include:
-  - edit.vim
+  - vim
   - date
   - crons
   - http
