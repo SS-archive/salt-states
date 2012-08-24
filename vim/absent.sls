@@ -10,7 +10,6 @@ vim:
 /etc/vimrc:
   file:
     - absent
-    - source: salt://edit/vimrc
     - user: root
     - group: root
     - mode: 644

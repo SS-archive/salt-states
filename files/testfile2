@@ -1,0 +1,4 @@
+cheese
+{{grains['os']}}
+{{grains['saltpath']}}
+barr
