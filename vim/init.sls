@@ -1,21 +1,22 @@
 # pkg.install
 vim:
-  pkg:
-    {% if grains['os'] == 'CentOS' or grains['os'] == 'Fedora' %}
+  pkg.installed:
+    {% if grains['os_family'] == 'RedHat' %}
     - name: vim-enhanced
+    {% elif grains['os'] == 'Debian' %}
+    - name: vim-rt
     {% endif %}
-    - installed
 
 {% if grains['os'] == 'Arch'%}
 /etc/vimrc:
   file:
     - managed
-    - source: salt://edit/vimrc
+    - source: salt://vim/vimrc
     - user: root
     - group: root
     - mode: 644
     - template: jinja
     - makedirs: True
     - require:
-      - pkg: vim
+      vim
 {% endif %}
