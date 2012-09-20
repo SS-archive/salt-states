@@ -17,20 +17,21 @@ apache:
     - running
 
 php5-pkgs:
-  pkg.installed:
+  pkg:
     {% if grains['os'] == 'Ubuntu' %}
     - names:
       - php5
-      - php5-mysql
+      - php5-pgsql
       - php5-curl
       - php5-cli
       - php5-cgi
       - php5-dev
       - php-pear
     {% endif %}
+    - installed
 
 postgresql:
-  pkg.installed:
+  pkg:
     {% if grains['os'] == 'Ubuntu' %}
     - names:
       - postgresql-8.3
@@ -39,22 +40,23 @@ postgresql:
       - postgresql-contrib-8.3
       - postgresql-common
     {% endif %}
-
+    - installed
 java-jdk:
-  pkg.installed:
+  pkg:
     {% if grains['os'] == 'Ubuntu' %}
     - name: openjdk-7-jre
     {% endif %}
     {% if grains['os_family'] == 'RedHat' %}
     - name: java-1.7.0-openjdk
     {% endif %}
+    - installed
 
-opengeo-suit:
-  pkg.installed:
+opengeo-suite:
+  pkg:
     {% if grains['os'] == 'Ubuntu' %}
     - name: opengeo-suite
     {% endif %}
-
+    - installed
 
 
    
