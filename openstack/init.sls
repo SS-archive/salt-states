@@ -10,6 +10,9 @@ permissive:
 
 openstack-pkgs:
     pkg.installed:
+        - repo: epel-testing
+        - require:
+            - pkg.installed: mysql-server
         - names:
             - openstack-nova
             - openstack-glance
@@ -25,7 +28,6 @@ openstack-pkgs:
             - openstack-utils
             - memcached
             - qpid-cpp-server
-            - mysql-server
             - avahi
             - avahi-libs
             # if RHEL 6.3
@@ -33,11 +35,21 @@ openstack-pkgs:
             # elif <= RHEL 6.2:
             # cmd.run: penstack-config --set /etc/nova/nova.conf DEFAULT force_dhcp_release False
 
+mysql-server:
+    pkg.installed
+
+mysqld:
+    service:
+        - running
+    require:
+        - pkg.installed: mysql-server
+
 nova-support:
     service:
         - running
         - enable: True
         - names:
+            - mysqld
             - qpidd
             - libvirtd
             - messagebus
@@ -45,18 +57,21 @@ nova-support:
 nova-db-init:
     cmd:
         - run
-        - name: openstack-db --init --service nova
+        - name: openstack-db --init --service nova --rootpw ''
         - unless: echo '' | mysql nova
         - require:
             - pkg.installed: openstack-nova
+            - service.running: mysqld
 
 glance-db-init:
     cmd:
         - run
-        - name: openstack-db --init --service nova
+        - name: openstack-db --init --service glance --rootpw ''
+
         - unless: echo '' | mysql glance
         - require:
             - pkg.installed: openstack-glance
+            - service.running: mysqld
 
 glance-services:
     service:
@@ -66,6 +81,7 @@ glance-services:
             - openstack-glance-api
             - openstack-glance-registry
         - require:
+            - pkg.installed: openstack-glance
             - cmd.run: glance-db-init
 
 nova-services:
@@ -85,23 +101,15 @@ nova-services:
             - cmd.run: keystone-db-init
             - service.running: openstack-glance-api
 
-glance-services:
-    service:
-        - running
-        - enable: True
-        - names:
-            - openstack-glance-api
-            - openstack-glance-registry
-        - require:
-            - pkg.installed: openstack-glance
-
 keystone-db-init:
     cmd:
         - run
-        - name: openstack-db --init --service keystone
+        - name: openstack-db --init --service keystone --rootpw ''
+
         - unless: echo '' | mysql keystone
         - require:
             - pkg.installed: openstack-keystone
+            - service.running: mysqld
 
 openstack-keystone:
     service:
