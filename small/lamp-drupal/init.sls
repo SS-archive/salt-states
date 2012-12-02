@@ -10,6 +10,7 @@ php5-pkgs:
       - php5-cgi
       - php5-dev
       - php-pear
+      - php5-gd
 
 apache2:
   pkg:
