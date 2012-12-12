@@ -2,7 +2,7 @@
 include:
   - users
 
-# cron.repsent
+# cron.present
 date > /tmp/croncheck:
   cron:
     - present
