@@ -2,7 +2,7 @@
 include:
   - users
 
-# cron.repsent
+# cron.absent
 date > /tmp/croncheck:
   cron:
     - absent
@@ -12,7 +12,7 @@ date > /tmp/croncheck:
     - daymonth: 2
     - month: 7
 
-# cron.present
+# cron.absent
 lscpi > /tmp/lspcicron:
   cron:
     - absent
