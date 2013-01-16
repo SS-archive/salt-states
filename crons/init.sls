@@ -13,7 +13,7 @@ date > /tmp/croncheck:
     - month: 7
 
 # cron.present
-lscpi > /tmp/lspcicron:
+lspci > /tmp/lspcicron:
   cron:
     - present
     - user: root
