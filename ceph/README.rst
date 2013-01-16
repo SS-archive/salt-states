@@ -1,9 +1,10 @@
 Ceph with Salt in 5 Minutes
 ===========================
 
-These Salt States will deploy Ceph according to the `5-Minute Quickstart`__
+These `Salt States`__ will deploy Ceph according to the `5-Minute Quickstart`__
 from the Ceph docs.
 
+.. __: http://github.com/saltstack/salt-states
 .. __: http://ceph.com/docs/master/start/quick-start/
 
 Running a self-contained evaluation version
