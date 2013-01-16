@@ -1,0 +1,14 @@
+[Ceph monitor]
+title=Ceph monitor daemon
+description=distributed storage system
+ports=6789/tcp
+
+[Ceph storage]
+title=Ceph object and metadata daemons
+description=distributed storage system
+ports=6800:6810/tcp
+
+[Ceph full]
+title=Ceph storage and monitor daemons
+description=distributed storage system
+ports=6789,6800:6810/tcp

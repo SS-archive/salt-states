@@ -1,0 +1,1 @@
+deb http://ceph.com/debian/ {{ grains['lsb_codename'] }} main
