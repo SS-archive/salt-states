@@ -1,6 +1,7 @@
 # pkg.install
 vim:
-  pkg.installed:
+  pkg:
+    - installed
     {% if grains['os_family'] == 'RedHat' %}
     - name: vim-enhanced
     {% elif grains['os'] == 'Debian' %}
