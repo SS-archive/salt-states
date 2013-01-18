@@ -19,5 +19,5 @@ vim:
     - template: jinja
     - makedirs: True
     - require:
-      - vim
+      - pkg: vim
 {% endif %}
