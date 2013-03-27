@@ -22,7 +22,7 @@ pear-drush:
 
 mariadb-server-5.5:
   cmd.run:
-    - name: sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
+    - name: sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
     - unless: apt-key list | grep -q 0xcbcb082a1bb943db
     - require:
       - file: mariadb-server-5.5
