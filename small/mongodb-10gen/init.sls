@@ -11,7 +11,7 @@ mongodb-10gen:
     - source: salt://mongodb-10gen/10gen.list
     - skip_verify: True
 {% elif grains['os_family'] == 'RedHat' %}
-mongo-10gen:
+mongodb-10gen:
   file:
     - managed
     - name: /etc/yum.repos.d/10gen.repo
