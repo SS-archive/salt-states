@@ -12,7 +12,7 @@ opengeo-suite-:
   {% endif %}
   {% if grains['os_family'] == 'RedHat' %}
   cmd.run:
-    - name: wget http://yum.opengeo.org/centos/5/x86_64/OpenGeo.repo
+    - name: wget http://yum.opengeo.org/centos/6/x86_64/OpenGeo.repo
   file:
     - managed
     - name: /etc/yum.repos.d/OpenGeo.repo
