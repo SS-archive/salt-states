@@ -9,7 +9,7 @@ ceph:
     - dead
     - enable: False
     - require:
-      - file: /etc/eval.conf
+      - file: /etc/ceph/ceph.conf
    {% if grains['os'] == 'Ubuntu'%}
       - file: /etc/apt/sources.list.d/ceph.list
    {% endif %}
