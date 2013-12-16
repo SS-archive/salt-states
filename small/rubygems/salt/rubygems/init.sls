@@ -1,8 +1,8 @@
 # Install the gems listed in pillar data.
 
 install-gems:
-  {% for rgems in pillar['gems'] %}
+  {% for gems in pillar['rgems'] %}
   module.run:
     - name: gem.install   
-    - gems: {{ rgems }} 
+    - gems: {{ gems }} 
   {% endfor %}
