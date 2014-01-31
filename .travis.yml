@@ -1,0 +1,31 @@
+# Minimal Travis verfication for salt states
+
+# Since salt/salt states aren't a language proper, this is a hackaround for now
+# We should probably build a basebox for travis at some point
+#    (see https://github.com/travis-ci/travis-ci/issues/1549)
+language: python
+python:
+- '2.7'
+
+before_install:
+  - sudo apt-get update -y
+  # Install salt minion on the same box
+  - curl -L http://bootstrap.saltstack.org | sudo sh -s -- git develop
+  # Set up our installation bits
+  - sudo mkdir -p /srv/salt/states
+  - sudo cp .travis/minion /etc/salt/minion
+
+install:
+  # Copy the states and restart
+  - sudo cp -r . /srv/salt/states
+  - sudo service salt-minion restart
+
+  # If anything bad happened on restarting the minion,
+  # we'll want to see the logs
+  - sudo cat /var/log/salt/*
+
+  # For additional debugging, see what's in grains on a travis box
+  - sudo salt-call grains.items --local
+
+script:
+  - sudo salt-call state.show_lowstate --local --retcode-passthrough
