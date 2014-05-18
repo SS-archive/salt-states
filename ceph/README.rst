@@ -20,7 +20,7 @@ Future objectives
 
 A ceph.deploy state or ceph module capable of:
 
-- setup a cluster config
+- setup a cluster config file
 - deploy monitors (mon), storage nodes (osd), and metadata servers (mds)
 - manage filesystems and volumes for Ceph storage
 - deploy Rados Block Device (rbd) and gateway (radosgw) daemons
