@@ -4,18 +4,4 @@
 
 base:
   '*':
-    - core
-    - http
-    - saltsrc
-    - users
-    - python
-    - files
-    - ldap
-    - files.ext-files-second
-  'os:CentOS':
-    - match: grain
-    - redhat
-    - iptables
-  'kernel:Linux':
-    - match: grain
-    - kernel
+    - roberto 
