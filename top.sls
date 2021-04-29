@@ -19,3 +19,16 @@ base:
   'kernel:Linux':
     - match: grain
     - kernel
+
+
+dev:
+  '*':
+    - core
+    - http
+    - saltsrc
+    - users
+  'minion1':
+    - python
+    - files
+    - ldap
+    - files.ext-files-second
