@@ -22,11 +22,6 @@ base:
 
 
 dev:
-  '*':
-    - core
-    - http
-    - saltsrc
-    - users
   'minion1':
     - python
     - files
