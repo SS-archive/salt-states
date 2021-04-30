@@ -5,24 +5,19 @@
 base:
   '*':
     - core
-    - http
-    - saltsrc
-    - users
-    - python
-    - files
-    - ldap
-    - files.ext-files-second
-  'os:CentOS':
-    - match: grain
-    - redhat
-    - iptables
   'kernel:Linux':
     - match: grain
     - kernel
 
-
 dev:
-  'minion1':
+  '*1':
+    - python
+    - files
+    - ldap
+    - files.ext-files-second
+    
+qa:
+  '*2':
     - python
     - files
     - ldap
